@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <!-- 在 head 标签中添加 meta 标签，并设置 viewport-fit=cover 值 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0,user-scalable=no, viewport-fit=cover" />
+  <!-- 引入样式文件 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vant@2.6/lib/index.css"/>
+
+  <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+  <title>景区预约</title>
+</head>
+
+<body>
+  <noscript>
+    <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled.
+      Please enable it to continue.</strong>
+  </noscript>
+  <div id="app"></div>
+  <script type="text/javascript">
+    !(function (doc, win) {
+      var docEle = doc.documentElement, //获取html元素
+        event = "onorientationchange" in window ? "orientationchange" : "resize", //判断是屏幕旋转还是resize;
+        fn = function () {
+          var width = docEle.clientWidth;
+          width && (docEle.style.fontSize = 100 * (width / 375) + "px"); //设置html的fontSize，随着event的改变而改变。
+        };
+
+      win.addEventListener(event, fn, false);
+      doc.addEventListener("DOMContentLoaded", fn, false);
+
+    }(document, window));
+  </script>
+  <!-- built files will be auto injected -->
+</body>
+
+</html>
